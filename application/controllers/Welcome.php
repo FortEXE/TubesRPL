@@ -21,10 +21,10 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 
-		$meta['page_title'] = "Selamat Datang di Propertiku";
+		$meta['page_title'] = "Selamat Datang di Situs Booking Tiket PegiLagi";
 
 		$this->load->view('template/header', $meta);
-		$this->load->view('v_guest/v_login');
+		$this->load->view('v_beranda/v_login');
 		$this->load->view('template/footer');
 	}
 
@@ -42,27 +42,22 @@ class Welcome extends CI_Controller {
 		$this->index();	
 	}
 
-	public function daftar()
+	public function cariTiket()
 	{
-		$meta['page_title'] = "Pendaftaran Akun";
+		$meta['page_title'] = "Cari Tiket";
+
+		$data['kereta'] = $this->model_kereta->getAll();
+		$data['stasiun'] = $this->model_stasiun->getAll();
+		$data['jadwal'] = $this->model_jadwal->getAll();
 
 		$this->load->view('template/header', $meta);
-		$this->load->view('v_guest/v_daftar');
+		$this->load->view('v_tiket', $data);
 		$this->load->view('template/footer');
-	}
-
-	public function tentang()
-	{
-		$meta['page_title'] = "Tentang";
-
-		$this->load->view('template/header', $meta);
-		$this->load->view('v_tentang');
-		$this->load->view('template/footer');	
 	}
 
 	public function pemesanan()
 	{
-		$meta['page_title'] = "Tentang";
+		$meta['page_title'] = "Pemesanan Tiket";
 
 		$this->load->view('template/header', $meta);
 		$this->load->view('v_pemesanan');

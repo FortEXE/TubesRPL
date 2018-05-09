@@ -133,16 +133,10 @@ $autoload['language'] = array();
 |	$autoload['model'] = array('first_model' => 'first');
 */
 $autoload['model'] = array(
-	'M_user/Model_beli',
-	'M_user/Model_jadwal',
-	'M_user/Model_kereta',
-	'M_user/Model_pengguna',
-	'M_user/Model_stasiun',
-	'M_user/Model_transaksi',
-	'M_admin/Model_beli',
-	'M_admin/Model_jadwal',
-	'M_admin/Model_kereta',
-	'M_admin/Model_pengguna',
-	'M_admin/Model_stasiun',
-	'M_admin/Model_transaksi'
+	'Model_beli',
+	'Model_jadwal',
+	'Model_kereta',
+	'Model_pengguna',
+	'Model_stasiun',
+	'Model_transaksi',
 );
