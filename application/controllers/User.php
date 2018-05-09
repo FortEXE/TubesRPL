@@ -33,9 +33,9 @@ class User extends CI_Controller {
 		return $this->index();	
 	}
 
-	public function member()
+	public function pemesanan()
 	{
-		$meta['page_title'] = "Beli Properti";
+		$meta['page_title'] = "Pemesanan";
 		$data['properti'] = $this->model_properti->GetAll();
 		$data['user'] = $this->model_user->GetAll();
 
