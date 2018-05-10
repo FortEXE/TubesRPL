@@ -2,12 +2,12 @@
 
 	defined('BASEPATH') OR exit('No direct script access allowed');
 	
-	class Model_jadwal CI_Model {
+	class Model_jadwal extends CI_Model {
 	
 		public function __construct()
 		{
 			parent::__construct();
-			$this->load->model('jadwal_data_store');
+			// $this->load->model('jadwal_data_store');
 			// do your magic here
 		}
 

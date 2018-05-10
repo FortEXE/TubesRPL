@@ -2,7 +2,7 @@
 
 	defined('BASEPATH') OR exit('No direct script access allowed');
 	
-	class Model_pemesanan CI_Model {
+	class Model_pemesanan extends CI_Model {
 	
 		public function __construct()
 		{

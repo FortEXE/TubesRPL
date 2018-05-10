@@ -2,7 +2,7 @@
 
 	defined('BASEPATH') OR exit('No direct script access allowed');
 	
-	class Model_stasiun CI_Model {
+	class Model_stasiun extends CI_Model {
 	
 		public function __construct()
 		{

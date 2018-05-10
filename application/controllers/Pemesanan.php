@@ -45,6 +45,14 @@ class Pemesanan extends CI_Controller {
 			}
 		}
 	}
+
+	public function proses_pemesanan()
+	{
+		$data['nama'] = $this->input->post('nama');
+		$data['alamat'] = $this->input->post('alamat');
+		$data['telp'] = $this->input->post('telp');
+		$data['email'] = $this->input->post('email');
+	}
 }
 
 ?>

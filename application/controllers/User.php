@@ -23,7 +23,7 @@ class User extends CI_Controller {
 			$meta['page_title'] = "Selamat datang, ". $this->session->userdata('username');
 
 			$this->load->view('template/header_user', $meta);
-			$this->load->view('v_user/v_home');
+			$this->load->view('v_user/v_beranda');
 			$this->load->view('template/footer');
 		}
 	}

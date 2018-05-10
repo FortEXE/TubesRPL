@@ -18,7 +18,7 @@ class Jadwal extends CI_Controller {
 	}
 
 	public function isAdmin()
-	{
+	{	
 		if ($this->session->userdata('user_type') == 'admin') {
 			return true;
 		}else{
@@ -38,8 +38,16 @@ class Jadwal extends CI_Controller {
 	public function index(){
 
 		if ($this->session->userdata('isLoggedIn')) {
-			if ($this->session->userdata('user_type') == 'admin') {
-				redirect('admin','refresh');
+			if (isAdmin()) {
+
+				$data['kereta'] = $this->Model_jadwal->getAll();
+				$data['stasiun'] = $this->Model_jadwal->getAll();
+				$data['jadwal'] = $this->Model_jadwal->getAll();
+
+				$this->load->view('template/header');
+				$this->load->view('v_admin/v_jadwal', $data);
+				$this->load->view('template/footer');
+
 			}else{
 				redirect('user','refresh');
 			}

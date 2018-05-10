@@ -24,17 +24,8 @@ class Welcome extends CI_Controller {
 		$meta['page_title'] = "Selamat Datang di Situs Booking Tiket PegiLagi";
 
 		$this->load->view('template/header', $meta);
-		$this->load->view('v_beranda/v_login');
+		$this->load->view('v_beranda');
 		$this->load->view('template/footer');
-	}
-
-	public function login()
-	{
-		if (!($this->session->userdata('isLoggedIn') == true)) {
-			$this->index();
-		}else{
-			redirect(site_url('account/index'),'refresh');
-		}
 	}
 
 	public function home()
@@ -46,14 +37,43 @@ class Welcome extends CI_Controller {
 	{
 		$meta['page_title'] = "Cari Tiket";
 
-		$data['kereta'] = $this->model_kereta->getAll();
-		$data['stasiun'] = $this->model_stasiun->getAll();
-		$data['jadwal'] = $this->model_jadwal->getAll();
+		$data['kereta'] = $this->Model_kereta->getAll();
+		$data['stasiun'] = $this->Model_stasiun->getAll();
+		$data['jadwal'] = $this->Model_jadwal->getAll();
 
 		$this->load->view('template/header', $meta);
 		$this->load->view('v_tiket', $data);
 		$this->load->view('template/footer');
 	}
+
+	public function bayarTiket()
+	{
+		$meta['page_title'] = "Bayar Tiket";
+
+		$this->load->view('template/header', $meta);
+		$this->load->view('v_bayar');
+		$this->load->view('template/footer');
+	}
+
+	public function beliTiket()
+	{
+		$meta['page_title'] = "Beli Tiket";
+
+		$this->load->view('template/header', $meta);
+		$this->load->view('v_beli');
+		$this->load->view('template/footer');
+	}
+	
+
+	public function login()
+	{
+		$meta['page_title'] = "Login";
+
+		$this->load->view('template/header');
+		$this->load->view('v_login');
+		$this->load->view('template/footer');
+	}
+
 
 	public function pemesanan()
 	{

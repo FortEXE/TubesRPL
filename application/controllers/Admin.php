@@ -22,9 +22,10 @@ class Admin extends CI_Controller {
 		if ($this->isAdmin()) {
 			
 			$meta['page_title'] = "Selamat datang, ". $this->session->userdata('username');
+			$data['session'] = $this->session->userdata();
 
-			$this->load->view('template/header_admin', $meta);
-			$this->load->view('v_admin/v_home');
+			$this->load->view('template/header', $meta);
+			$this->load->view('v_beranda', $data);
 			$this->load->view('template/footer');
 		}
 		
