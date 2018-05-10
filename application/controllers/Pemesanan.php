@@ -38,11 +38,11 @@ class Pemesanan extends CI_Controller {
 	public function index(){
 
 		if ($this->session->userdata('isLoggedIn')) {
-			if ($this->session->userdata('user_type') == 'admin') {
-				redirect('admin','refresh');
-			}else{
-				redirect('user','refresh');
-			}
+			
+			$this->load->view('template/header');
+			$this->load->view('v_pemesanan');
+			$this->load->view('template/footer');
+
 		}
 	}
 

@@ -23,25 +23,46 @@
 
 	    public function GetById($xid){
 
-	    	$data = $this->db->select('*')->from('kereta_data_store')->where('id',$xid)->get();
-	    	return $data->result_array();
+	    	$data = $this->db->select('*')->from('kereta_data_store')->where('ID_KERETA',$xid)->get();
+	    	
+	    	if($data){
+		    	return $data->result_array();
+	    	}else{
+	    		return false;
+	    	}
 	    }
 
 	    public function insertData($data){
 
-	    	$q = $this->db->insert('kereta_data_store', $data);
+	    	if($q = $this->db->insert('kereta_data_store', $data)){
+	    		return true;
+	    	}else{
+	    		return false;
+	    	}
 	    }
 
 	    public function deleteData($data){
 
-	    	$q = $this->db->where('id', $data['id']);
+	    	$q = $this->db->where('ID_KERETA', $data['ID_KERETA']);
 	    	$q = $this->db->delete('kereta_data_store');
+
+	    	if($q){
+	    		return true;
+	    	}else{
+	    		return false;
+	    	}
 	    }
 
 	    public function updateData($data){
 
-	    	$q = $this->db->where('id', $data['id']);
-	    	$q = $this->db->update('kereta_data_store');
+	    	$q = $this->db->where('ID_KERETA', $data['ID_KERETA']);
+	    	$q = $this->db->update('kereta_data_store', $data);
+
+	    	if($q){
+	    		return true;
+	    	}else{
+	    		return false;
+	    	}
 	    }
 
 	}

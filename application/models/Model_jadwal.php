@@ -24,7 +24,7 @@
 
 	    public function GetById($xid){
 
-	    	$data = $this->db->select('*')->from('jadwal_data_store')->where('id',$xid)->get();
+	    	$data = $this->db->select('*')->from('jadwal_data_store')->where('ID_JADWAL',$xid)->get();
 	    	return $data->result_array();
 	    }
 

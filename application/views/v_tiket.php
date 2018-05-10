@@ -28,53 +28,56 @@
 		<?php 
 
 		$i = 1;
-		foreach ($jadwal as $value) {
+		foreach ($jadwal as $value) { ?>
 
-			echo '<tr>';
+			<tr>
 
-				echo '<td>';
-					echo $i++;
-				echo '</td>';
-				foreach ($kereta as $val) {
-					if($val['ID_KERETA'] == $value['ID_KERETA']){
-						echo '<td>';
-						echo $val['NAMA_KERETA'];
-						echo '</td>';
-					}
-				}
+				<td>
+					<?= $i++ ?>
+				</td>
 
-				foreach ($stasiun as $val) {
-					if($val['ID_STASIUN'] == $value['ID_STASIUN_AWAL']){
-						echo '<td>';
-						echo $val['NAMA_STASIUN'];
-						echo '</td>';
-					}
-				}
+				<?php foreach ($kereta as $val):
+					if($val['ID_KERETA'] == $value['ID_KERETA']): ?>
+						<td>
+							<?= $val['NAMA_KERETA']; ?>
+						</td>
+					<?php endif ?>
+				<?php endforeach ?>
+					
+				<?php foreach ($stasiun as $val):
+					if($val['ID_STASIUN'] == $value['ID_STASIUN_AWAL']): ?>
+						<td>
+							<?= $val['NAMA_STASIUN']; ?>
+						</td>
+					<?php endif ?>
+				<?php endforeach ?>
 
-				foreach ($stasiun as $val) {
-					if($val['ID_STASIUN'] == $value['ID_STASIUN_TUJUAN']){
-						echo '<td>';
-						echo $val['NAMA_STASIUN'];
-						echo '</td>';
-					}
-				}
+				<?php foreach ($stasiun as $val):
+					if($val['ID_STASIUN'] == $value['ID_STASIUN_TUJUAN']): ?>
+						<td>
+							<?= $val['NAMA_STASIUN']; ?>
+						</td>
+					<?php endif ?>
+				<?php endforeach ?>
 
-				echo '<td>';
-					echo $value['JAM_BERANGKAT'];
-				echo '</td>';
+				<td>
+					<?= $value['JAM_BERANGKAT'] ?>
+				</td>
 				
-				echo '<td>';
-					echo $value['JAM_DATANG'];
-				echo '</td>';
+				<td>
+					<?= $value['JAM_DATANG']; ?>
+				</td>
 
-				echo '<td>';
-					echo $value['KETERANGAN_JADWAL'];
-				echo '</td>';
+				<td>
+					<?= $value['KETERANGAN_JADWAL']; ?>
+				</td>
 
-				echo '<td>';
-					echo "<a href='" . site_url('welcome/beliTiket/'. $value['ID_JADWAL']) . "' title=''>beli tiket</a>";
-				echo '</td>';
-			echo '</tr>';
+				<td>
+					<a href='<?= site_url('welcome/beliTiket/'. $value['ID_JADWAL']) ?>' title=''>beli tiket</a>
+				</td>
+			</tr>
+		
+		<?php 
 		}
 		?>
 	</tbody>

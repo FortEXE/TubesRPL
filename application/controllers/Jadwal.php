@@ -38,10 +38,10 @@ class Jadwal extends CI_Controller {
 	public function index(){
 
 		if ($this->session->userdata('isLoggedIn')) {
-			if (isAdmin()) {
+			if ($this->isAdmin()) {
 
-				$data['kereta'] = $this->Model_jadwal->getAll();
-				$data['stasiun'] = $this->Model_jadwal->getAll();
+				$data['kereta'] = $this->Model_kereta->getAll();
+				$data['stasiun'] = $this->Model_stasiun->getAll();
 				$data['jadwal'] = $this->Model_jadwal->getAll();
 
 				$this->load->view('template/header');

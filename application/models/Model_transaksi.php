@@ -23,7 +23,7 @@
 
 	    public function GetById($xid){
 
-	    	$data = $this->db->select('*')->from('transaksi_data_store')->where('id',$xid)->get();
+	    	$data = $this->db->select('*')->from('transaksi_data_store')->where('ID_TRANSAKSI',$xid)->get();
 	    	return $data->result_array();
 	    }
 

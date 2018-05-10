@@ -23,7 +23,7 @@
 
 	    public function GetById($xid){
 
-	    	$data = $this->db->select('*')->from('member_data_store')->where('id',$xid)->get();
+	    	$data = $this->db->select('*')->from('member_data_store')->where('ID_MEMBER',$xid)->get();
 	    	return $data->result_array();
 	    }
 
