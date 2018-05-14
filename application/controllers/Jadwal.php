@@ -3,14 +3,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Jadwal extends CI_Controller {
 
-	public function redirect_user()
-	{
-		if ($this->session->userdata('user_type') == 'admin') {
-			redirect('admin/jadwal');			
-		}else{
-			redirect('user/jualjadwal','refresh');
-		}
-	}
+	// public function redirect_user()
+	// {
+	// 	if ($this->session->userdata('user_type') == 'admin') {
+	// 		redirect('admin/jadwal');			
+	// 	}else{
+	// 		redirect('user/jadwal','refresh');
+	// 	}
+	// }
 
 	public function __construct(){
 		parent::__construct();

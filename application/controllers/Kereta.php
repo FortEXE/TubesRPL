@@ -3,14 +3,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Kereta extends CI_Controller {
 
-	public function redirect_user()
-	{
-		if ($this->session->userdata('user_type') == 'admin') {
-			redirect('admin/kereta');			
-		}else{
-			redirect('user/jualkereta','refresh');
-		}
-	}
+	// public function redirect_user()
+	// {
+	// 	if ($this->session->userdata('user_type') == 'admin') {
+	// 		redirect('admin/kereta');			
+	// 	}else{
+	// 		redirect('user/jualkereta','refresh');
+	// 	}
+	// }
 
 	public function __construct(){
 		parent::__construct();

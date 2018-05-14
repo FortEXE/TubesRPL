@@ -11,7 +11,7 @@
  Target Server Version : 100130
  File Encoding         : 65001
 
- Date: 14/05/2018 12:58:01
+ Date: 14/05/2018 13:28:20
 */
 
 SET NAMES utf8mb4;
@@ -62,7 +62,7 @@ CREATE TABLE `kereta_data_store`  (
 -- Records of kereta_data_store
 -- ----------------------------
 BEGIN;
-INSERT INTO `kereta_data_store` VALUES ('KA001', 'Marifat Jaya', 'ekonomi', 12, 1800), ('KA002', 'Switch', 'ekonomi', 16, 1600), ('KA003', 'Take Flight', 'ekonomi', 16, 1600), ('KA004', 'Relocaleap', 'ekonomi', 20, 2000), ('KA005', 'Geocast', 'ekonomi', 16, 1600), ('KA006', 'Geo Pass', 'ekonomi', 15, 1500), ('KA007', 'Lightning Step', 'ekonomi', 17, 1700), ('KA008', 'Geoport', 'ekonomi', 17, 1700), ('KA009', 'Wink', 'ekonomi', 16, 1600), ('KA010', 'Detour', 'ekonomi', 20, 2000), ('KA011', 'Bounce', 'bisnis', 15, 900), ('KA012', 'Streamstep', 'bisnis', 19, 1140), ('KA013', 'Geo Relocation', 'bisnis', 20, 1200), ('KA014', 'Portal', 'eksekutif', 20, 1000), ('KA015', 'Body Flicker', 'eksekutif', 19, 950), ('KA016', 'Apparate', 'eksekutif', 17, 850);
+INSERT INTO `kereta_data_store` VALUES ('KA001', 'Marifat Jaya', 'bisnis', 12, 1800), ('KA002', 'Switch', 'ekonomi', 16, 1600), ('KA003', 'Take Flight', 'ekonomi', 16, 1600), ('KA004', 'Relocaleap', 'ekonomi', 20, 2000), ('KA005', 'Geocast', 'ekonomi', 16, 1600), ('KA006', 'Geo Pass', 'ekonomi', 15, 1500), ('KA007', 'Lightning Step', 'ekonomi', 17, 1700), ('KA008', 'Geoport', 'ekonomi', 17, 1700), ('KA009', 'Wink', 'ekonomi', 16, 1600), ('KA010', 'Detour', 'ekonomi', 20, 2000), ('KA011', 'Bounce', 'bisnis', 15, 900), ('KA012', 'Streamstep', 'bisnis', 19, 1140), ('KA013', 'Geo Relocation', 'bisnis', 20, 1200), ('KA014', 'Portal', 'eksekutif', 20, 1000), ('KA015', 'Body Flicker', 'eksekutif', 19, 950), ('KA016', 'Apparate', 'eksekutif', 17, 850);
 COMMIT;
 
 -- ----------------------------
@@ -74,7 +74,7 @@ CREATE TABLE `member_data_store`  (
   `USERNAME` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `NAMA_MEMBER` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `JK_MEMBER` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
-  `TIPE_MEMBER` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `TIPE_MEMBER` enum('user','admin') CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `NOTELP_MEMBER` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `ALAMAT_MEMBER` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `PASSWD_MEMBER` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
@@ -85,7 +85,7 @@ CREATE TABLE `member_data_store`  (
 -- Records of member_data_store
 -- ----------------------------
 BEGIN;
-INSERT INTO `member_data_store` VALUES (1, 'adnankhairi', 'Adnan Khairi', 'laki-laki', 'admin', '', '', ''), (2, 'rifkysis', 'Rifky Syswanto', 'laki-laki', 'admin', '', '', ''), (4, 'yuniarti', 'Yuniarti Musaadah', 'perempuan', 'admin', '', '', ''), (5, 'bisma', 'Bisma Wahyu', 'laki-laki', 'admin', '', '', ''), (6, 'asep', 'Asep Saepul', 'laki-laki', 'user', '', '', ''), (7, 'ammar', 'Ammar Ash-shiddiqi', 'laki-laki', 'user', '', '', ''), (8, 'izhar', 'M Izhar Rusiawan', 'laki-laki', 'user', '', '', '');
+INSERT INTO `member_data_store` VALUES (1, 'adnankhairi', 'Adnan Khairi', 'laki-laki', 'admin', '', '', 'admin'), (2, 'rifkysis', 'Rifky Syswanto', 'laki-laki', 'admin', '', '', 'admin'), (4, 'yuniarti', 'Yuniarti Musaadah', 'perempuan', 'admin', '', '', 'admin'), (5, 'bisma', 'Bisma Wahyu', 'laki-laki', 'admin', '', '', 'admin'), (6, 'asep', 'Asep Saepul', 'laki-laki', 'user', '', '', 'user'), (7, 'ammar', 'Ammar Ash-shiddiqi', 'laki-laki', 'user', '', '', 'user'), (8, 'izhar', 'M Izhar Rusiawan', 'laki-laki', 'user', '', '', 'user');
 COMMIT;
 
 -- ----------------------------
@@ -121,7 +121,7 @@ CREATE TABLE `stasiun_data_store`  (
   `ID_STASIUN` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `NAMA_STASIUN` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `ALAMAT_STASIUN` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
-  `NO_TELP__STASIUN` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `NO_TELP_STASIUN` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   PRIMARY KEY (`ID_STASIUN`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = latin1 COLLATE = latin1_swedish_ci;
 

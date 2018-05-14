@@ -3,14 +3,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Stasiun extends CI_Controller {
 
-	public function redirect_user()
-	{
-		if ($this->session->userdata('user_type') == 'admin') {
-			redirect('admin/stasiun');			
-		}else{
-			redirect('user/jualstasiun','refresh');
-		}
-	}
+	// public function redirect_user()
+	// {
+	// 	if ($this->session->userdata('user_type') == 'admin') {
+	// 		redirect('admin/stasiun');			
+	// 	}else{
+	// 		redirect('user/jualstasiun','refresh');
+	// 	}
+	// }
 
 	public function __construct(){
 		parent::__construct();

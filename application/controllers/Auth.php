@@ -7,11 +7,11 @@ class Auth extends CI_Controller {
 	}
 
 	public function cek_login() {
-		$data = array('USERNAME' => $this->input->post('username', TRUE),
-						'PASSWD_MEMBER' => ($this->input->post('password', TRUE))
+		$data = array('USERNAME' => $this->input->post('username'),
+						'PASSWD_MEMBER' => $this->input->post('password')
 			);
-		$this->load->model('model_member'); // load model_user
-		$hasil = $this->model_member->cek_member($data);
+		$this->load->model('Model_member'); // load model_user
+		$hasil = $this->Model_member->cek_Member($data);
 		if ($hasil->num_rows() == 1) {
 			foreach ($hasil->result() as $sess) {
 				$sess_data['logged_in'] = 'Sudah Loggin';

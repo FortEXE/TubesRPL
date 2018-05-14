@@ -7,6 +7,7 @@
 <table>
 	<thead>
 		<tr>
+			<th>Nomor</th>
 			<th>ID Stasiun</th>
 			<th>Nama Stasiun</th>
 			<th>Alamat Stasiun</th>
