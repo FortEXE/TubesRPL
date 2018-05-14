@@ -31,18 +31,36 @@
 	    public function insertData($data){
 
 	    	$q = $this->db->insert('jadwal_data_store', $data);
+	    	
+	    	if($q){
+	    		return true;
+	    	}else{
+	    		return false;
+	    	}
 	    }
 
 	    public function deleteData($data){
 
-	    	$q = $this->db->where('id', $data['id']);
+	    	$q = $this->db->where('ID_JADWAL', $data['ID_JADWAL']);
 	    	$q = $this->db->delete('jadwal_data_store');
+
+	    	if($q){
+	    		return true;
+	    	}else{
+	    		return false;
+	    	}
 	    }
 
 	    public function updateData($data){
 
-	    	$q = $this->db->where('id', $data['id']);
-	    	$q = $this->db->update('jadwal_data_store');
+	    	$q = $this->db->where('ID_JADWAL', $data['ID_JADWAL']);
+	    	$q = $this->db->update('jadwal_data_store', $data);
+	    
+	    	if($q){
+	    		return true;
+	    	}else{
+	    		return false;
+	    	}
 	    }
 
 	}
