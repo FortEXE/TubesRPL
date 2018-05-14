@@ -4,6 +4,7 @@
 
  ?>
 
+<a href="<?= site_url('stasiun/tambah') ?>" title="">tambah stasiun</a>
 <table>
 	<thead>
 		<tr>
@@ -28,8 +29,8 @@
 		 		<td><?= $var['ALAMAT_STASIUN'] . '<br>' ?></td>	
 		 		<td><?= $var['NO_TELP_STASIUN'] . '<br>' ?></td>
 		 		<td>
-		 			<a href="<?= site_url('stasiun/edit/') ?>" title="">edit</a>
-		 			<a href="<?= site_url('stasiun/hapus/') ?>" title="">hapus</a>
+		 			<a href="<?= site_url('stasiun/edit/' . $var['ID_STASIUN']) ?>" title="">edit</a>
+		 			<a href="<?= site_url('stasiun/hapus/' . $var['ID_STASIUN']) ?>" title="">hapus</a>
 		 		</td>	
 		 		
 		 	</tr>	

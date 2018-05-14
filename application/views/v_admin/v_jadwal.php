@@ -4,6 +4,7 @@
 
  ?>
 
+<a href="<?= site_url('jadwal/tambah') ?>" title="">tambah jadwal</a>
 <table>
 	<thead>
 		<tr>
@@ -32,8 +33,8 @@
 		 		<td><?= $var['JAM_DATANG'] . '<br>' ?></td>	
 		 		<td><?= $var['KETERANGAN_JADWAL'] . '<br>' ?></td>
 		 		<td>
-		 			<a href="<?= site_url('jadwal/edit/') ?>" title="">edit</a>
-		 			<a href="<?= site_url('jadwal/hapus') ?>" title="">hapus</a>
+		 			<a href="<?= site_url('jadwal/edit/' . $var['ID_KERETA']) ?>" title="">edit</a>
+		 			<a href="<?= site_url('jadwal/hapus/' . $var['ID_KERETA']) ?>" title="">hapus</a>
 		 		</td>	
 		 		
 		 	</tr>	
