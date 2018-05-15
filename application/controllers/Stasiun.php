@@ -96,11 +96,10 @@ class Stasiun extends CI_Controller {
 	{
 		if($this->isAdmin()){
 
-			$data['ID_stasiun'] = $this->input->post('id_stasiun');
-			$data['NAMA_stasiun'] = $this->input->post('nama_stasiun');
-			$data['KETERANGAN_stasiun'] = $this->input->post('keterangan_stasiun');
-			$data['NO_GERBONG'] = $this->input->post('no_gerbong');
-			$data['NO_KURSI'] = $this->input->post('no_kursi');
+			$data['ID_STASIUN'] = $this->input->post('id_stasiun');
+			$data['NAMA_STASIUN'] = $this->input->post('nama_stasiun');
+			$data['ALAMAT_STASIUN'] = $this->input->post('alamat_stasiun');
+			$data['NO_TELP_STASIUN'] = $this->input->post('no_telp_stasiun');
 
 			$q = $this->Model_stasiun->updateData($data);
 
@@ -129,7 +128,7 @@ class Stasiun extends CI_Controller {
 	{
 		if($this->isAdmin()){
 
-			$data['ID_stasiun'] = $this->input->post('id_stasiun');
+			$data['ID_STASIUN'] = $this->input->post('id_stasiun');
 
 			$q = $this->Model_stasiun->deleteData($data);
 

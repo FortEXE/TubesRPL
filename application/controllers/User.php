@@ -21,27 +21,12 @@ class User extends CI_Controller {
 		if ($this->isUser()) {
 			
 			$meta['page_title'] = "Selamat datang, ". $this->session->userdata('username');
+			$data['session'] = $this->session->userdata();
 
-			$this->load->view('template/header_user', $meta);
-			$this->load->view('v_user/v_beranda');
+			$this->load->view('template/header', $meta);
+			$this->load->view('v_beranda', $data);
 			$this->load->view('template/footer');
 		}
-	}
-
-	public function home()
-	{
-		return $this->index();	
-	}
-
-	public function pemesanan()
-	{
-		$meta['page_title'] = "Pemesanan";
-		$data['properti'] = $this->model_properti->GetAll();
-		$data['user'] = $this->model_user->GetAll();
-
-		$this->load->view('template/header_user', $meta);
-		$this->load->view('v_user/v_beliProperti', $data);
-		$this->load->view('template/footer');	
 	}
 
 }

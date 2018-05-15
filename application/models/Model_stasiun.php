@@ -30,18 +30,36 @@
 	    public function insertData($data){
 
 	    	$q = $this->db->insert('stasiun_data_store', $data);
+
+	    	if($q){
+	    		return true;
+	    	}else{
+	    		return false;
+	    	}
 	    }
 
 	    public function deleteData($data){
 
-	    	$q = $this->db->where('id', $data['id']);
+	    	$q = $this->db->where('ID_STASIUN', $data['ID_STASIUN']);
 	    	$q = $this->db->delete('stasiun_data_store');
+
+	    	if($q){
+	    		return true;
+	    	}else{
+	    		return false;
+	    	}
 	    }
 
 	    public function updateData($data){
 
-	    	$q = $this->db->where('id', $data['id']);
-	    	$q = $this->db->update('stasiun_data_store');
+	    	$q = $this->db->where('ID_STASIUN', $data['ID_STASIUN']);
+	    	$q = $this->db->update('stasiun_data_store', $data);
+	    
+	    	if($q){
+	    		return true;
+	    	}else{
+	    		return false;
+	    	}
 	    }
 
 	}
