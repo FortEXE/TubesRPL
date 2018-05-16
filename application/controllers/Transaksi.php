@@ -38,6 +38,8 @@ class Transaksi extends CI_Controller {
 	public function index(){
 
 		if ($this->session->userdata('isLoggedIn')) {
+
+			$data['transaksi'] = $this->Model_transaksi->getAll();
 			if ($this->isAdmin()) {
 				$this->load->view('template/header');
 				$this->load->view('v_admin/v_transaksi', $data);

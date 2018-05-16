@@ -15,13 +15,13 @@
 			return $query;
 		}
 
-		public function GetAll()
+		public function getAll()
 	    {
 	        $data = $this->db->get('pemesanan_data_store');
 	        return $data->result_array();
 	    }
 
-	    public function GetById($xid){
+	    public function getById($xid){
 
 	    	$data = $this->db->select('*')->from('pemesanan_data_store')->where('ID_PEMESANAN',$xid)->get();
 	    	return $data->result_array();

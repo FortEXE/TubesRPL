@@ -37,10 +37,11 @@ class Pemesanan extends CI_Controller {
 
 	public function index(){
 
-		if ($this->session->userdata('isLoggedIn')) {
+		if ($this->isAdmin()) {
 			
+			$data['pemesanan'] = $this->Model_pemesanan->getAll();
 			$this->load->view('template/header');
-			$this->load->view('v_pemesanan');
+			$this->load->view('v_admin/v_pemesanan', $data);
 			$this->load->view('template/footer');
 
 		}

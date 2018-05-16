@@ -138,4 +138,5 @@ $autoload['model'] = array(
 	'Model_member',
 	'Model_stasiun',
 	'Model_transaksi',
+	'Model_pemesanan'
 );
