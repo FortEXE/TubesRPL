@@ -20,7 +20,6 @@
 			<th>Stasiun Tujuan</th>
 			<th>Jam Berangkat</th>
 			<th>Jam Datang</th>
-			<th>Keterangan</th>
 			<th></th>
 		</tr>
 	</thead>
@@ -69,11 +68,7 @@
 				</td>
 
 				<td>
-					<?= $value['KETERANGAN_JADWAL']; ?>
-				</td>
-
-				<td>
-					<a href='<?= site_url('welcome/beliTiket/'. $value['ID_JADWAL']) ?>' title=''>beli tiket</a>
+					<a href='<?= site_url('pemesanan/pembayaran/'. $value['ID_JADWAL']) ?>' title=''>beli tiket</a>
 				</td>
 			</tr>
 		

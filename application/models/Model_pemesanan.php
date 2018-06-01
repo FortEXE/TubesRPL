@@ -30,6 +30,12 @@
 	    public function insertData($data){
 
 	    	$q = $this->db->insert('pemesanan_data_store', $data);
+
+	    	if ($q) {
+	    		return true;
+	    	}else{
+	    		return false;
+	    	}
 	    }
 
 	    public function deleteData($data){
@@ -43,9 +49,8 @@
 	    	$q = $this->db->where('id', $data['id']);
 	    	$q = $this->db->update('pemesanan_data_store');
 	    }
-
 	}
-	
+
 	/* End of file Model_pemesanan.php */
 	/* Location: ./application/models/Model_pemesanan.php */
  ?>
