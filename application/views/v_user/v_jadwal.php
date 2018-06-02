@@ -7,25 +7,34 @@
  <body>
   <div class="row">
    <div style="margin:50px;">
-    <h4>Jadwal Kereta Api</h4>
+    <h2 style="text-align: center">JADWAL KERETA API</h2>
     	<table class="table table-striped table-bordered">
      	<tr>
-		    <td><strong>No</strong></td>
-		    <td><strong>Stasiun Awal</strong></td>
-		    <td><strong>Stasiun Tujuan</strong></td>
-		    <td><strong>Jam Berangkat</strong></td>
-		    <td><strong>Jam Tiba</strong></td>
-		    <td></td>
+		    <td style="text-align: center"><strong>No</strong></td>
+		    <td style="text-align: center"><strong>Stasiun Awal</strong></td>
+		    <td style="text-align: center"><strong>Stasiun Tujuan</strong></td>
+		    <td style="width: 180px; text-align: center; te"><strong>Jam Berangkat</strong></td>
+		    <td style="width: 180px; text-align: center;"><strong>Jam Tiba</strong></td>
+		    <td style="width: 160px; text-align: center;"></td>
+		    <td style="width: 110px; text-align: center;"></td>
 		</tr> 
 		     <?php foreach($jadwal as $jadwal){?>
 
 		<tr>
-			<td><?=$jadwal['ID'];?></td>
+			<td style="text-align: center"><?=$jadwal['ID'];?></td>
 			<td><?=$jadwal['Sawal'];?></td>
 			<td><?=$jadwal['Stujuan'];?></td>
-			<td><?=$jadwal['jam_berangkat'];?></td>
-			<td><?=$jadwal['jam_datang'];?></td>
-			<td><button type="submit" class="btn btn-success" >Lihat Selengkapnya</button></td>
+			<td style="text-align: center"><?=$jadwal['jam_berangkat'];?></td>
+			<td style="text-align: center; align: center;";><?=$jadwal['jam_datang'];?></td>
+			<td >
+			<form action="User_jadwal/detail">
+				<button type="submit" class="btn btn-primary" style="width: 150px; text-align: center;">Lihat Selengkapnya</button>
+			</form>
+			</td>
+			<td >
+			<form action="User_jadwal/detail">
+				<button type="submit" class="btn btn-success" style="width: 100px; text-align: center;">Beli Tiket</button></td>
+			</form>
 	    </tr>     
      <?php }?>  
     </table>

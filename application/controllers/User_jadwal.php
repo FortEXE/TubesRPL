@@ -42,6 +42,23 @@ class User_jadwal extends CI_Controller {
 			}
 		}
 	}
+
+	public function detail(){
+
+		if ($this->session->userdata('isLoggedIn')) {
+			if ($this->isUser()) {
+
+				$data['jadwal'] = $this->Model_jadwal->get_jadwal();
+
+				//$this->load->view('template/header');
+				$this->load->view('v_user/v_detailJadwal', $data);
+				//$this->load->view('template/footer');
+
+			}else{
+				redirect('user','refresh');
+			}
+		}
+	}
 }
 
 ?>
