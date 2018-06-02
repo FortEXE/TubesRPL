@@ -21,6 +21,15 @@ if (!empty($session)) {
 	}?>
 
 	<hr>
+	<?php
+	if($session['user_type'] == 'user'){ ?>
+
+			
+		<a href="<?= site_url('user_jadwal') ?>" title="">Lihat Jadwal Kereta</a><br>		
+
+	<?php
+	}?>
+
 	<a href="<?= site_url('welcome/caritiket') ?>" title="Cari tiket">Cari tiket</a><br>
 	<a href="<?= site_url('welcome/bayartiket') ?>" title="Bayar tiket">Bayar Tiket</a><br>
 	
