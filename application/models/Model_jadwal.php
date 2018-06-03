@@ -11,6 +11,17 @@
 			// do your magic here
 		}
 
+		public function get_jadwal(){
+			$result = NULL;
+    		$query=$this->db->query('SELECT a.id_jadwal ID, d.nama_kereta namaKereta, b.nama_stasiun Sawal, c.nama_stasiun Stujuan, a.jam_berangkat, a.jam_datang, a.keterangan_jadwal FROM jadwal_data_store a JOIN stasiun_data_store b ON a.id_stasiun_awal=b.id_stasiun JOIN stasiun_data_store c ON a.id_stasiun_tujuan=c.id_stasiun JOIN kereta_data_store d ON a.id_kereta=d.id_kereta');
+     		
+     		if($query->num_rows()>0){
+        		$result = $query->result_array();
+      		}
+    		
+    		return $result;
+		}
+
 		public function cek_jadwal($data) {
 			$query = $this->db->get_where('jadwal_data_store', $data);
 			return $query;
