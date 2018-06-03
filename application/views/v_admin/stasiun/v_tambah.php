@@ -1,14 +1,9 @@
-<form action="<?= site_url('kereta/proses_tambah') ?>" method="post" accept-charset="utf-8">
+<form action="<?= site_url('stasiun/proses_tambah') ?>" method="post" accept-charset="utf-8">
 
-	<input type="text" name="id_kereta" placeholder="id kereta">
-	<input type="text" name="nama_kereta" placeholder="nama kereta">
-	<select name="keterangan_kereta">
-		<option value="ekonomi">ekonomi</option>
-		<option value="bisnis">bisnis</option>
-		<option value="eksekutif">eksekutif</option>
-	</select>
-	<input type="number" name="no_gerbong" placeholder="jumlah gerbong">
-	<input type="number" name="no_kursi" placeholder="jumlah kursi">
+	<input type="text" name="id_stasiun" placeholder="id stasiun">
+	<input type="text" name="nama_stasiun" placeholder="nama stasiun">
+	<input type="text" name="alamat_stasiun" placeholder="alamat stasiun">
+	<input type="text" name="no_telp_stasiun" placeholder="nomor telp stasiun">
 	<input type="submit" name="submit" value="TAMBAH">
 
 </form>
