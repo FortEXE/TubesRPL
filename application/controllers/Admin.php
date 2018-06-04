@@ -27,6 +27,8 @@ class Admin extends CI_Controller {
 			$this->load->view('template/header', $meta);
 			$this->load->view('v_beranda', $data);
 			$this->load->view('template/footer');
+		}else{
+			redirect('','refresh');
 		}
 		
 	}

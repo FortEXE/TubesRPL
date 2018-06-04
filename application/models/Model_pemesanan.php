@@ -27,6 +27,12 @@
 	    	return $data->result_array();
 	    }
 
+	    public function getByIdMember($xid){
+
+	    	$data = $this->db->select('*')->from('pemesanan_data_store')->where('ID_MEMBER',$xid)->get();
+	    	return $data->result_array();
+	    }
+
 	    public function insertData($data){
 
 	    	$q = $this->db->insert('pemesanan_data_store', $data);
@@ -40,15 +46,16 @@
 
 	    public function deleteData($data){
 
-	    	$q = $this->db->where('id', $data['id']);
+	    	$q = $this->db->where('ID_PEMESANAN', $data['ID_PEMESANAN']);
 	    	$q = $this->db->delete('pemesanan_data_store');
 	    }
 
 	    public function updateData($data){
 
-	    	$q = $this->db->where('id', $data['id']);
-	    	$q = $this->db->update('pemesanan_data_store');
+	    	$q = $this->db->where('ID_PEMESANAN', $data['ID_PEMESANAN']);
+	    	$q = $this->db->update('pemesanan_data_store', $data);
 	    }
+
 	}
 
 	/* End of file Model_pemesanan.php */

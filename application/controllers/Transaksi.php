@@ -49,6 +49,23 @@ class Transaksi extends CI_Controller {
 			}
 		}
 	}
+
+	public function proses_tambah()
+	{
+		$data['ID_PEMESANAN'] = $this->input->post('id_pemesanan');
+		$data['NAMA_PENUMPANG'] = $this->input->post('nama_penumpang');
+		$data['KATEGORI_PENUMPANG'] = $this->input->post('kategori_penumpang');
+		$data['JENIS_PEMBAYARAN'] = $this->input->post('jenis_pembayaran');
+		$data['TOTAL_PEMBAYARAN_TRANSAKSI'] = $this->input->post('total_pembayaran');
+
+		$upd['ID_PEMESANAN'] = $data['ID_PEMESANAN'];
+		$upd['STATUS_PEMBAYARAN'] = "1";
+
+		$this->Model_transaksi->insertData($data);
+		$this->Model_pemesanan->updateData($upd);
+		echo 'enjoy your ride!';
+		redirect('welcome','refresh');
+	}
 }
 
 ?>
