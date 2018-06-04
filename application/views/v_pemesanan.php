@@ -4,7 +4,7 @@
 
 ?>
 
-<form action="<?= site_url('pemesanan/proses_pemesanan') ?>" method="post" accept-charset="utf-8">
+<form action="<?= site_url('pemesanan/proses_pembelian') ?>" method="post" accept-charset="utf-8">
 
 	<input type="text" name="nama" value="" placeholder="input nama lengkap">
 	<input type="text" name="alamat" value="" placeholder="input alamat">

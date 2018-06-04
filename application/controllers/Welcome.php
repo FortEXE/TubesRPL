@@ -22,9 +22,9 @@ class Welcome extends CI_Controller {
 	{
 
 		$meta['page_title'] = "Selamat Datang di Situs Booking Tiket PegiLagi";
-
+		$data['session'] = $this->session->userdata();
 		$this->load->view('template/header', $meta);
-		$this->load->view('v_beranda');
+		$this->load->view('v_beranda', $data);
 		$this->load->view('template/footer');
 	}
 
@@ -53,6 +53,7 @@ class Welcome extends CI_Controller {
 		$this->load->view('template/header', $meta);
 		$this->load->view('v_bayar');
 		$this->load->view('template/footer');
+
 	}
 
 	public function beliTiket()
@@ -69,9 +70,18 @@ class Welcome extends CI_Controller {
 	{
 		$meta['page_title'] = "Login";
 
-		$this->load->view('template/header');
+		$this->load->view('template/header',$meta);
 		$this->load->view('v_login');
 		$this->load->view('template/footer');
+	}
+
+	public function register()
+	{
+		$meta['page_title'] = "register";
+		$this->load->view('template/header', $meta);
+		$this->load->view('v_register');
+		$this->load->view('template/footer');
+
 	}
 
 

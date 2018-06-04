@@ -1,6 +1,6 @@
 <?php 
 
-if (!empty($session)) {
+if (isset($session['user_type'])) {
 
 	// print_r($session);
 	echo 'welcome, ';
@@ -25,13 +25,15 @@ if (!empty($session)) {
 	if($session['user_type'] == 'user'){ ?>
 
 			
-		<a href="<?= site_url('user_jadwal') ?>" title="">Lihat Jadwal Kereta</a><br>		
+		<a href="<?= site_url('user_jadwal') ?>" title="">Lihat Jadwal Kereta</a><br>
+		<a href="<?= site_url('welcome/caritiket') ?>" title="Cari tiket">Cari tiket</a><br>
+		<a href="<?= site_url('pemesanan/pembayaran') ?>" title="Bayar tiket">Bayar Tiket</a><br>		
 
 	<?php
 	}?>
 
-	<a href="<?= site_url('welcome/caritiket') ?>" title="Cari tiket">Cari tiket</a><br>
-	<a href="<?= site_url('welcome/bayartiket') ?>" title="Bayar tiket">Bayar Tiket</a><br>
+	
+	<a href="<?= site_url('account/proses_logout') ?>" title="Logout">Logout</a><br>
 	
 	<?php
 
@@ -39,6 +41,7 @@ if (!empty($session)) {
 	
 	?>	
 	<a href="<?= site_url('welcome/login') ?>" title="">login</a>
+	<a href="<?= site_url('welcome/register') ?>" title="">buat akun</a>
 	<?php
 }
 

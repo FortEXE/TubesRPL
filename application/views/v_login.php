@@ -2,6 +2,6 @@
 	<input type="username" name="username" value="" placeholder="masukkan username">
 	<input type="password" name="password" value="" placeholder="password">
 	<input type="submit" name="submit" value="login">
-
+	
 
 </form>

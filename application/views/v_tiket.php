@@ -68,7 +68,7 @@
 				</td>
 
 				<td>
-					<a href='<?= site_url('pemesanan/pembayaran/'. $value['ID_JADWAL']) ?>' title=''>beli tiket</a>
+					<a href='<?= site_url('pemesanan/pembelian/'. $value['ID_JADWAL']) ?>' title=''>beli tiket</a>
 				</td>
 			</tr>
 		

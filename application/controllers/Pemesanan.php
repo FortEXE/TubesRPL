@@ -63,7 +63,7 @@ class Pemesanan extends CI_Controller {
 		}
 	}
 
-	public function pembayaran($xid_jadwal)
+	public function pembelian($xid_jadwal)
 	{
 		
 		if($this->isUser() || $this->isAdmin()){
@@ -72,7 +72,7 @@ class Pemesanan extends CI_Controller {
 			$data['kereta'] = $this->Model_kereta->getAll();
 			$data['stasiun'] = $this->Model_stasiun->getAll();
 			$this->load->view('template/header');
-			$this->load->view('v_bayar', $data);
+			$this->load->view('v_beli', $data);
 			$this->load->view('template/footer');
 		}
 	}
@@ -92,6 +92,31 @@ class Pemesanan extends CI_Controller {
 		}else{
 			echo 'pemesanan gagal';
 		}
+
+		redirect('welcome','refresh');
+	}
+
+	public function pembayaran()
+	{
+
+		$data['jadwal'] = $this->Model_jadwal->getAll();
+		$data['kereta'] = $this->Model_kereta->getAll();
+		$data['stasiun'] = $this->Model_stasiun->getAll();
+		$data['pembayaran'] = $this->Model_pemesanan->getByIdMember($this->session->userdata('id_member'));
+
+		$this->load->view('template/header');
+		$this->load->view('v_bayar', $data);
+		$this->load->view('template/footer');
+	}
+
+	public function detailpembayaran($id_pembayaran)
+	{
+
+		$data['detailpembayaran'] = $this->Model_pemesanan->getById($id_pembayaran);
+
+		$this->load->view('template/header');
+		$this->load->view('v_transaksi', $data);
+		$this->load->view('template/footer');
 	}
 
 }

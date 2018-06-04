@@ -30,19 +30,22 @@ class Account extends CI_Controller {
 
 	public function proses_logout(){
 		$this->session->sess_destroy();
+		echo 'anda telah logout, sesi dihapus';
 		redirect('','refresh');
 	}
 
 	public function proses_tambah()
 	{
-		$data['username'] = $this->input->post('username');
-		$data['email'] = $this->input->post('email');
-		$data['user_type'] = "user";
-		$data['password'] =  md5($this->input->post('password'));
+		$data['USERNAME'] = $this->input->post('username');
+		$data['NAMA_MEMBER'] = $this->input->post('nama_member');
+		$data['NOTELP_MEMBER'] = $this->input->post('notelp');
+		$data['JK_MEMBER'] = $this->input->post('jk');
+		$data['ALAMAT_MEMBER'] = $this->input->post('alamat');
+		$data['PASSWD_MEMBER'] = ($this->input->post('password'));
 
-		$this->model_user->insertData($data);
+		$this->Model_member->insertData($data);
 
-		$this->redirect_user();
+		redirect('welcome','refresh');
 	}
 
 	public function proses_hapus($id)
